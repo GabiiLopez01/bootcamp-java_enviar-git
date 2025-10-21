@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e5e7eb;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #374151;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin-left: auto;
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #06b6d4;
+}
+
+.nav-button {
+    background-color: #06b6d4;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #0891b2;
+}
+
+/* Main Container - Grid para layout de dos columnas */
+.main-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Left Column */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    grid-column: 1;
+}
+
+.right-column-wrapper {
+    grid-column: 2; 
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    border: 1px solid #d1d5db;
+}
+
+.header-banner {
+    height: 120px;
+    background-color: #06b6d4;
+}
+
+.profile-content {
+    padding: 0 2.5rem 2.5rem 2.5rem;
+    text-align: left;
+    position: relative;
+}
+
+.profile-image {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: -55px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.profile-name {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.profile-location {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile-role {
+    font-size: 1.05rem;
+    color: #374151;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.profile-bio {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-top: 1.2rem;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.edit-link {
+    display: block;
+    color: #06b6d4;
+    text-decoration: none;
+    margin-top: 1.2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    text-align: left;
+}
+
+.edit-link:hover {
+    color: #0891b2;
+    text-decoration: underline;
+}
+
+/* Education Card */
+.education-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    border: 1px solid #d1d5db;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.education-item {
+    margin-top: 0.5rem;
+}
+
+.education-school {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+}
+
+.education-date {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-description {
+    color: #4b5563;
+    margin-top: 0.4rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Wrapper virtual para las tarjetas de conexiones en columna derecha */
+.main-container > .connections-card {
+    grid-column: 2;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    border: 1px solid #d1d5db;
+}
+
+/* Primera tarjeta de conexiones */
+.main-container > .connections-card:first-of-type {
+    grid-row: 1;
+}
+
+/* Segunda tarjeta de conexiones - debajo de la primera */
+.main-container > .connections-card:last-of-type {
+    grid-row: 2;
+}
+
+.connections-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    border: 1px solid #d1d5db;
+}
+
+.connections-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.8rem;
+}
+
+/* Request Item */
+.request-item {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.request-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.request-item:first-of-type {
+    padding-top: 0;
+}
+
+.request-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.2rem;
+}
+
+.request-name {
+    flex: 1;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.request-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn-accept,
+.btn-reject {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background-color: white;
+}
+
+.btn-accept {
+    color: #10b981;
+    border-color: #10b981;
+}
+
+.btn-accept:hover {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-reject {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.btn-reject:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Connection Item */
+.connection-item {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.connection-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.connection-item:first-of-type {
+    padding-top: 0;
+}
+
+.connection-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.2rem;
+}
+
+.connection-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .left-column,
+    .main-container > .connections-card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .main-container {
+        padding: 0 1rem;
+    }
+    
+    .profile-content,
+    .education-card,
+    .connections-card {
+        padding: 1.5rem;
+    }
+}
