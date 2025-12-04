@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    color: #666;
+    font-size: 1.2em;
+}
+
+.btn-volver {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-volver:hover {
+    background: #5568d3;
+}
+
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+main h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.recetas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.receta-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.receta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.receta-icono {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.receta-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.btn-ver-receta {
+    display: inline-block;
+    padding: 12px 25px;
+    background: white;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-ver-receta:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.titulo-receta {
+    color: #667eea;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.detalle-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+}
+
+.detalle-card h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.lista-ingredientes {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-ingredientes li {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+    font-size: 1.1em;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.lista-ingredientes li:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.lista-ingredientes li:before {
+    content: "✓ ";
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.mensaje-error {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.mensaje-error h2 {
+    color: #e74c3c;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.mensaje-error p {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn-principal {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #667eea;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s;
+}
+
+.btn-principal:hover {
+    background: #5568d3;
+    transform: scale(1.05);
+}
+
+footer {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+footer p {
+    color: #666;
+    font-size: 1em;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .recetas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .titulo-receta {
+        font-size: 1.8em;
+    }
+    
+    .detalle-card {
+        padding: 20px;
+    }
+}

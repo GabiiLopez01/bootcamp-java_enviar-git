@@ -1,0 +1,10 @@
+# Archivos de compilación de Maven/Gradle
+/target/
+
+# Archivos de logs
+*.log
+
+# Archivos temporales de IDEs comunes (Ej: IntelliJ, VS Code, Eclipse)
+.idea/
+*.iml
+.vscode/
