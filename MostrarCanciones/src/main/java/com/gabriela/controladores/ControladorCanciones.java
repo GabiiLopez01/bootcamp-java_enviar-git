@@ -68,5 +68,35 @@ public class ControladorCanciones {
         return "redirect:/canciones";
     }
 
+    //Incorporación actividad Actualizar Cancion
+    //GET/canciones/formulario/editar{idCancion} - muestra formulario para editar una cancion existente
+    @GetMapping("/canciones/formulario/editar/{idCancion}")
+    public String formularioEditarCancion(@PathVariable Long idCancion, Model modelo) {
+        Cancion cancion = servicioCanciones.obtenerCancionPorId(idCancion);
+        modelo.addAttribute("cancion", cancion);
+        return "editarCancion";
+    }
+
+    //Incorporación actividad Actualizar Cancion
+    //POST/canciones/formulario/editar{idCancion} - procesa formulario y actualiza cancion en BD
+    @PostMapping("/canciones/procesa/editar/{idCancion}")
+    public String procesarEditarCancion(
+            @PathVariable Long idCancion,
+            @Valid @ModelAttribute("cancion") Cancion cancion,
+            BindingResult resultado) {
+        
+        if (resultado.hasErrors()) {
+            return "editarCancion";
+        }
+        
+        // Asegurar que el ID se mantenga (para actualizar, no crear nuevo)
+        cancion.setId(idCancion);
+        
+        // Actualizar la canción
+        servicioCanciones.actualizaCancion(cancion);
+        
+        return "redirect:/canciones";
+    }
+
 }
 

@@ -33,4 +33,11 @@ public class ServicioCanciones {
     public Cancion agregarCancion(Cancion cancion){
         return repositorioCanciones.save(cancion);
     }
+
+    //Incorporación actividad Actualiza Cancion
+    //Actualiza canción a la base de datos
+    public Cancion actualizaCancion(Cancion cancion) {
+        return repositorioCanciones.save(cancion);
+    }
+
 }

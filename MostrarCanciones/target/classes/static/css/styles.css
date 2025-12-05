@@ -363,3 +363,30 @@ footer p {
 .btn-link:hover {
     text-decoration: underline;
 }
+
+.botones-accion {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-editar {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #ffc107;
+    color: #333;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.btn-editar:hover {
+    background: #e0a800;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+}

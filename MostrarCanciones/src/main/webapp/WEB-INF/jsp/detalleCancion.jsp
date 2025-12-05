@@ -56,8 +56,11 @@
                             </p>
                         </div>
                     </div>
-                    
-                    <div style="text-align: center; margin-top: 30px;">
+                    <!-- incorporación actividad Actualiza Cancion -->
+                     <div class="botones-accion">
+                        <a href="<c:url value='/canciones/formulario/editar/${cancion.id}'/>" class="btn-editar">
+                            Editar Canción
+                        </a>
                         <a href="<c:url value='/canciones'/>" class="btn-principal">
                             Volver a lista de canciones
                         </a>
@@ -68,7 +71,7 @@
             <c:if test="${cancion == null}">
                 <div class="mensaje-error">
                     <h2> Canción no encontrada</h2>
-                    <p>La canción que buscas no existe en nuestra colección.</p>
+                    <p>La canción que buscas no existe en nuestra base de datos.</p>
                     <a href="<c:url value='/canciones'/>" class="btn-principal">Volver a lista de canciones</a>
                 </div>
             </c:if>
