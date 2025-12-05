@@ -1,0 +1,6 @@
+id,album,fecha_actualizacion,fecha_creacion,genero,idioma,titulo,artista_id
+1,"A Night at the Opera","2025-12-05 10:15:05.973000","2025-12-04 22:27:49.000000",Rock,Inglés,"Bohemian Rhapsody",1
+2,Imagine,"2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Pop,Inglés,Imagine,1
+4,Vida,"2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Reggaeton,Español,Despacito,1
+5,"Hotel California","2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Rock,Inglés,"Hotel California",1
+7,"La Bamba","2025-12-05 10:17:23.520000","2025-12-05 10:17:23.520000","Rock and Roll",Español,"La Bamba",2

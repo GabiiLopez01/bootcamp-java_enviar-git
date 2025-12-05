@@ -29,10 +29,18 @@
                         <form:errors path="titulo" cssClass="error-mensaje"/>
                     </div>
                     
+                    <!-- Incorporacion Canciones y Artistas -->
                     <div class="form-group">
-                        <form:label path="artista">Artista:</form:label>
-                        <form:input path="artista" placeholder="Ej: Queen" class="form-control"/>
-                        <form:errors path="artista" cssClass="error-mensaje"/>
+                        <label for="artistaId"> Artista:</label>
+                        <select name="artistaId" id="artistaId" class="form-control" required>
+                            <option value="">-- Selecciona un artista --</option>
+                            <c:forEach items="${artistas}" var="artista">
+                                <option value="${artista.id}" 
+                                        <c:if test="${cancion.artista.id == artista.id}">selected</c:if>>
+                                    <c:out value="${artista.nombre} ${artista.apellido}"/>
+                                </option>
+                            </c:forEach>
+                        </select>
                     </div>
                     
                     <div class="form-group">

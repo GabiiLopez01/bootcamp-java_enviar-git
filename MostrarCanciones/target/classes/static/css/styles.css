@@ -409,3 +409,184 @@ footer p {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
 }
+
+.artistas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.artista-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: block;
+}
+
+.artista-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.artista-icono {
+    font-size: 4em;
+    margin-bottom: 15px;
+}
+
+.artista-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.btn-ver-detalle {
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Detalle de Artista */
+.detalle-artista {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.detalle-artista h2 {
+    color: #667eea;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.info-artista {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+    margin-bottom: 30px;
+}
+
+/* Lista de canciones del artista */
+.canciones-artista {
+    background: #fff3cd;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #ffc107;
+    margin-top: 30px;
+}
+
+.canciones-artista h3 {
+    color: #856404;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.lista-canciones-artista {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-canciones-artista li {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.lista-canciones-artista li:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.lista-canciones-artista li a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.lista-canciones-artista li a:hover {
+    color: #5568d3;
+}
+
+.sin-canciones {
+    color: #856404;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Botones de navegación */
+.botones-navegacion {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-ir-artistas,
+.btn-ir-canciones {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #17a2b8;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+.btn-ir-artistas:hover,
+.btn-ir-canciones:hover {
+    background: #138496;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+}
+
+/* Textarea para biografía */
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+/* Select mejorado */
+select.form-control {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+    appearance: none;
+}
+
+select.form-control:focus {
+    border-color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .artistas-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .botones-navegacion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn-ir-artistas,
+    .btn-ir-canciones {
+        text-align: center;
+    }
+}

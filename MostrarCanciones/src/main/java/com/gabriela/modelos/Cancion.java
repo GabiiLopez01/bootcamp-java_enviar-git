@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import java.util.Date;
 
+import com.gabriela.modelos.Artista;
 
 //Modelo de dominio para Cancion
 //Representa una canción en la base de datos
@@ -13,23 +14,27 @@ import java.util.Date;
 @Table(name = "canciones")
 public class Cancion {
     
-    // Id: Identificador de la canción para la base de datos
+    //Id: Identificador de la canción para la base de datos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    
+        
     //Incorporación actividad Agregar Canciones
     @Size(min = 5, message = "El titulo debe tener al menos 5 caracteres")
     // Título: El nombre de la canción   
     @Column(nullable = false)
     private String titulo;
     
+    //Incorporacion actividad Canciones y Artistas - Artista es objeto
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "artista_id")
+    private Artista artista;
+    
     //Incorporación actividad Agregar Canciones
-    @Size(min = 3, message = "El artista debe tener al menos 3 caracteres")
+    // @Size(min = 3, message = "El artista debe tener al menos 3 caracteres")
     // Artista: El nombre del artista o banda que interpreta la canción
-    @Column(nullable = false)
-    private String artista;
+    // @Column(nullable = false)
+    // private String artista;
     
     //Incorporación actividad Agregar Canciones
     @Size(min = 3, message = "El album debe tener al menos 3 caracteres")
@@ -86,7 +91,7 @@ public class Cancion {
         return titulo;
     }
        
-    public String getArtista() {
+    public Artista getArtista() {
         return artista;
     }
     
@@ -119,7 +124,7 @@ public class Cancion {
         this.titulo = titulo;
     }
 
-    public void setArtista(String artista) {
+    public void setArtista(Artista artista) {
         this.artista = artista;
     }
 

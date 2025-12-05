@@ -1,5 +1,9 @@
-com\gabriela\modelos\Cancion.class
 com\gabriela\servicios\ServicioCanciones.class
-com\gabriela\controladores\ControladorCanciones.class
+com\gabriela\controladores\ControladorArtistas.class
 com\gabriela\CancionesApplication.class
+com\gabriela\servicios\ServicioArtistas.class
 com\gabriela\repositorios\RepositorioCanciones.class
+com\gabriela\modelos\Cancion.class
+com\gabriela\controladores\ControladorCanciones.class
+com\gabriela\repositorios\RepositorioArtistas.class
+com\gabriela\modelos\Artista.class

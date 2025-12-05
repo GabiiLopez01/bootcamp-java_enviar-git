@@ -22,9 +22,12 @@
                     <h2> <c:out value="${cancion.titulo}"/></h2>
                     
                     <div class="info-cancion">
+                        <!-- Incorporacion Canciones y Artistas -->
                         <div class="info-item">
                             <strong> Artista:</strong>
-                            <p><c:out value="${cancion.artista}"/></p>
+                            <p>
+                                <c:out value="${cancion.artista.nombre} ${cancion.artista.apellido}"/>
+                            </p>
                         </div>
                         
                         <div class="info-item">
