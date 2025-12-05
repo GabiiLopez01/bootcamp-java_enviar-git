@@ -1,7 +1,10 @@
 package com.gabriela.modelos;
 
 import jakarta.persistence.*;
+//incorporación actividad Agregar Canciones
+import jakarta.validation.constraints.Size;
 import java.util.Date;
+
 
 //Modelo de dominio para Cancion
 //Representa una canción en la base de datos
@@ -15,22 +18,33 @@ public class Cancion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    // Título: El nombre de la canción
+    
+    //Incorporación actividad Agregar Canciones
+    @Size(min = 5, message = "El titulo debe tener al menos 5 caracteres")
+    // Título: El nombre de la canción   
     @Column(nullable = false)
     private String titulo;
     
+    //Incorporación actividad Agregar Canciones
+    @Size(min = 3, message = "El artista debe tener al menos 3 caracteres")
     // Artista: El nombre del artista o banda que interpreta la canción
     @Column(nullable = false)
     private String artista;
     
+    //Incorporación actividad Agregar Canciones
+    @Size(min = 3, message = "El album debe tener al menos 3 caracteres")
     // Álbum: El álbum en el que se encuentra la canción
     @Column(nullable = false)
     private String album;
     
+    //Incorporación actividad Agregar Canciones
+    @Size(min = 3, message = "El genero debe tener al menos 3 caracteres")
     // Género: El género musical de la canción (rock, pop, jazz, etc.)
     @Column(nullable = false)
     private String genero;
     
+    //Incorporación actividad Agregar Canciones
+    @Size(min = 3, message = "El idioma debe tener al menos 3 caracteres")
     // Idioma: El idioma en el que está escrita la canción
     @Column(nullable = false)
     private String idioma;

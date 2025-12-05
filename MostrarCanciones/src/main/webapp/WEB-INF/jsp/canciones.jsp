@@ -41,6 +41,12 @@
                     </c:forEach>
                 </tbody>
             </table>
+              <!-- incorporación actividad Agregar Canciones -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="<c:url value='/canciones/formulario/agregar'/>" class="btn-agregar-grande">
+                    Agregar Nueva Canción
+                </a>
+            </div>
         </main>
     </div>
 </body>

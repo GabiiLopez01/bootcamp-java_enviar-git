@@ -8,15 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-//Servicio para la logica del  negocio de cancion
+//Servicio para la logica del negocio de cancion
 @Service
 public class ServicioCanciones {
     
     //Inyecta el respositorio
     @Autowired
     private RepositorioCanciones repositorioCanciones;
-    
-   
+     
     
     //Obtiene todas las canciones de la base de datos
     public List<Cancion> obtenerTodasLasCanciones() {
@@ -24,9 +23,14 @@ public class ServicioCanciones {
     }
     
     // Obtiene una canción por su ID
-    
     public Cancion obtenerCancionPorId(Long id) {
         Optional <Cancion> cancion = repositorioCanciones.findById(id); 
             return cancion.orElse(null);
+    }
+
+    //Incorporación actividad Agregar Canciones
+    //Agrega una canción a la base de datos
+    public Cancion agregarCancion(Cancion cancion){
+        return repositorioCanciones.save(cancion);
     }
 }

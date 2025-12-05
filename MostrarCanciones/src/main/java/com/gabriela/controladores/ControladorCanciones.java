@@ -2,11 +2,19 @@ package com.gabriela.controladores;
 
 import com.gabriela.modelos.Cancion;
 import com.gabriela.servicios.ServicioCanciones;
+//Incorporación actividad Agregar Canciones
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+//Incorporación actividad Agregar Canciones
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+//Incorporación actividad Agregar Canciones
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+//Incorporación actividad Agregar Canciones
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -26,12 +34,39 @@ public class ControladorCanciones {
         return "canciones";
     }
     
-    // GET /canciones/detalle/{idCancion}
+    //GET/canciones/detalle/{idCancion}
     @GetMapping("/canciones/detalle/{idCancion}")
     public String desplegarDetalleCancion(@PathVariable Long idCancion, Model modelo) {
         Cancion cancion = servicioCanciones.obtenerCancionPorId(idCancion);
         modelo.addAttribute("cancion", cancion);
         return "detalleCancion";
     }
+
+    //Incorporación actividad Agregar Canciones
+    //GET/canciones/formulario/agregar
+     @GetMapping("/canciones/formulario/agregar")
+    public String formularioAgregarCancion(@ModelAttribute("cancion") Cancion cancion) {
+        return "agregarCancion";
+    }
+
+    //Incorporación actividad Agregar Canciones
+    //POST/canciones/procesa/agregar
+    @PostMapping("/canciones/procesa/agregar")
+    public String procesarAgregarCancion(
+            @Valid @ModelAttribute("cancion") Cancion cancion,
+            BindingResult resultado) {
+        
+        // Si hay errores de validación, volver al formulario
+        if (resultado.hasErrors()) {
+            return "agregarCancion";
+        }
+        
+        // Guardar la canción en la base de datos
+        servicioCanciones.agregarCancion(cancion);
+        
+        // Redireccionar a la lista de canciones
+        return "redirect:/canciones";
+    }
+
 }
 
