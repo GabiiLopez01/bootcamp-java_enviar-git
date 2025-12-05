@@ -40,4 +40,10 @@ public class ServicioCanciones {
         return repositorioCanciones.save(cancion);
     }
 
+    //Incorporación actividad Eliminar Cancion
+    //Elimina una canción de la BD
+    public void eliminaCancion(Long id){
+        repositorioCanciones.deleteById(id);
+    }
+
 }

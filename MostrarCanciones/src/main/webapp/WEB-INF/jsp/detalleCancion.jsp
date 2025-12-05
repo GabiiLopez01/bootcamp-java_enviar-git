@@ -61,13 +61,19 @@
                         <a href="<c:url value='/canciones/formulario/editar/${cancion.id}'/>" class="btn-editar">
                             Editar Canción
                         </a>
+                        <!-- incorporación actividad Elimin Cancion -->
+                        <a href="<c:url value='/canciones/eliminar/${cancion.id}'/>" 
+                           class="btn-eliminar"
+                           onclick="return confirm('¿Estás seguro de que quieres eliminar esta canción?');">
+                            Eliminar
+                        </a> 
                         <a href="<c:url value='/canciones'/>" class="btn-principal">
                             Volver a lista de canciones
                         </a>
                     </div>
                 </div>
             </c:if>
-            
+
             <c:if test="${cancion == null}">
                 <div class="mensaje-error">
                     <h2> Canción no encontrada</h2>

@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 // Controlador para gestionar las vistas de canciones
 @Controller
@@ -97,6 +99,15 @@ public class ControladorCanciones {
         
         return "redirect:/canciones";
     }
+
+    //Incorporación actividad Eliminar Cancion
+    //Elimina una canción de la BD
+    @GetMapping("/canciones/eliminar/{idCancion}")
+    public String procesarEliminarCancion(@PathVariable Long idCancion) {
+        servicioCanciones.eliminaCancion(idCancion);
+        return "redirect:/canciones";
+    }
+    
 
 }
 

@@ -1,0 +1,5 @@
+id,album,artista,fecha_actualizacion,fecha_creacion,genero,idioma,titulo
+1,"A Night at the Opera",Queen,"2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Rock,Inglés,"Bohemian Rhapsody"
+2,Imagine,"John Lennon","2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Pop,Inglés,Imagine
+4,Vida,"Luis Fonsi","2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Reggaeton,Español,Despacito
+5,"Hotel California",Eagles,"2025-12-04 22:27:49.000000","2025-12-04 22:27:49.000000",Rock,Inglés,"Hotel California"
